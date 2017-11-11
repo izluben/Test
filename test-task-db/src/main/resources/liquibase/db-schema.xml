@@ -81,4 +81,18 @@
                                  referencedTableName="book"/>
     </changeSet>
 
+    <changeSet id="9" author="oleg">
+        <createTable tableName="account">
+            <column name="id" type="java.sql.Types.BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="username" type="java.sql.Types.VARCHAR(255)">
+            </column>
+            <column name="password" type="java.sql.Types.VARCHAR(255)">
+            </column>
+            <column name="role" type="java.sql.Types.VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
