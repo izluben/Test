@@ -4,12 +4,7 @@ package ua.oleg.romanyuta.domain;
 import javax.persistence.*;
 
 @Entity
-public class Reward {
-
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Reward extends DomainObject {
 
     @Column
     private Integer year;
@@ -20,14 +15,6 @@ public class Reward {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Integer getYear() {
         return year;

@@ -3,11 +3,7 @@ package ua.oleg.romanyuta.domain;
 import javax.persistence.*;
 
 @Entity
-public class Account {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Account extends DomainObject {
 
     @Column
     private String username;
@@ -24,14 +20,6 @@ public class Account {
     public Account(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {

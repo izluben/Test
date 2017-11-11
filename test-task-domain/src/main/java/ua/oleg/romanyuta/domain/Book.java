@@ -8,11 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Book {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Book extends DomainObject {
 
     @Column
     private String title;
@@ -31,14 +27,6 @@ public class Book {
 //    @JsonIgnore
 //    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private List<Author> authors = new ArrayList();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

@@ -10,11 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Author {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Author extends DomainObject {
 
     @Column
     private String firstName;
@@ -36,15 +32,6 @@ public class Author {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private List<Reward> rewards = new ArrayList();
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
