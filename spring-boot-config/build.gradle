@@ -1,6 +1,6 @@
 
 description = ''
 dependencies {
-  compile project(':city-claims-ui')
-  compile project(':city-claims-db')
+  compile project(':test-task-ui')
+  compile project(':test-task-db')
 }
