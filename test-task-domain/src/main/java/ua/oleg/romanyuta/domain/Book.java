@@ -1,4 +1,4 @@
-package od.city.claims.domain;
+package ua.oleg.romanyuta.domain;
 
 
 import javax.persistence.*;

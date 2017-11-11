@@ -1,7 +1,7 @@
-package od.city.claims.dao;
+package ua.oleg.romanyuta.dao;
 
 
-import od.city.claims.domain.Reward;
+import ua.oleg.romanyuta.domain.Reward;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

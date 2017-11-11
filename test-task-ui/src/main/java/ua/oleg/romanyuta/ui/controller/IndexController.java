@@ -1,14 +1,13 @@
-package od.city.claims.ui.controller;
+package ua.oleg.romanyuta.ui.controller;
 
-import od.city.claims.dao.ClaimRepository;
-import od.city.claims.domain.Claim;
+import ua.oleg.romanyuta.dao.ClaimRepository;
+import ua.oleg.romanyuta.domain.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.Date;
 
