@@ -27,7 +27,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //import ua.oleg.romanyuta.domain.Role;
 
 
-@SpringBootApplication(scanBasePackages = {"ua.oleg.romanyuta.ui"})
+@SpringBootApplication(scanBasePackages = {"ua.oleg.romanyuta.api"})
 @EnableJpaRepositories(basePackages = "ua.oleg.romanyuta.dao")
 @EntityScan("ua.oleg.romanyuta.domain")
 //@EnableAutoConfiguration

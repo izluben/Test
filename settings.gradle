@@ -4,6 +4,7 @@ include ':test-task-dao'
 include ':test-task-db'
 include ':test-task-ui'
 include ':spring-boot-config'
+include 'test-task-service'
 
 project(':test-task-domain').projectDir = "$rootDir/test-task-domain" as File
 project(':test-task-dao').projectDir = "$rootDir/test-task-dao" as File
