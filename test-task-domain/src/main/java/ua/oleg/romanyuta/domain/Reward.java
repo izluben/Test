@@ -1,6 +1,8 @@
 package ua.oleg.romanyuta.domain;
 
 
+import com.fasterxml.jackson.annotation.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,9 @@ public class Reward extends DomainObject {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "lastName")
     private Author author;
 
     public Integer getYear() {

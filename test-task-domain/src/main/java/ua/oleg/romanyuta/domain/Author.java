@@ -25,9 +25,9 @@ public class Author extends DomainObject {
     private Date birthDate;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
-//    @JsonBackReference
-//    @JsonIgnore
-//    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "title")
     private List<Book> books = new ArrayList();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
@@ -65,7 +65,6 @@ public class Author extends DomainObject {
         this.birthDate = birthDate;
     }
 
-    @JsonIgnore
     public List<Book> getBooks() {
         return books;
     }

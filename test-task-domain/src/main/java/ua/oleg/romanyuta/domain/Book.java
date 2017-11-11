@@ -23,9 +23,9 @@ public class Book extends DomainObject {
     @JoinTable(name = "authorsToBooks", joinColumns = {
             @JoinColumn(name = "book_id") },
             inverseJoinColumns = { @JoinColumn(name = "author_id") })
-//    @JsonManagedReference
-//    @JsonIgnore
-//    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "lastName")
     private List<Author> authors = new ArrayList();
 
     public String getTitle() {
@@ -52,7 +52,6 @@ public class Book extends DomainObject {
         this.genre = genre;
     }
 
-    @JsonIgnore
     public List<Author> getAuthors() {
         return authors;
     }
