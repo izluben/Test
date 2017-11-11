@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="ppavlenko">
+       <insert tableName="claim">
+           <column name="title" value="Яма на дороге" />
+           <column name="description" value="На улице Дерибасовской провал в дороге, невозможно проехать" />
+           <column name="creationDate" valueDate="CURRENT_TIMESTAMP" />
+       </insert>
+    </changeSet>
+    <changeSet id="2" author="oleg">
+        <insert tableName="book">
+            <column name="title" value="Thinking in Java" />
+            <column name="isbn" value="123456789" />
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Head First Design Patterns" />
+            <column name="isbn" value="987654321" />
+        </insert>
+        <insert tableName="book">
+            <column name="title" value="Spring in Action" />
+            <column name="isbn" value="112233445" />
+        </insert>
+    </changeSet>
+    <changeSet id="3" author="oleg">
+        <insert tableName="author">
+            <column name="firstName" value="Craig" />
+            <column name="lastName" value="Walls" />
+            <column name="birthDate" value="1970-11-11" />
+        </insert>
+        <insert tableName="author">
+            <column name="firstName" value="Bruce" />
+            <column name="lastName" value="Eckel" />
+            <column name="birthDate" value="1980-01-01" />
+        </insert>
+        <insert tableName="author">
+            <column name="firstName" value="Erik" />
+            <column name="lastName" value="Freeman" />
+            <column name="birthDate" value="1972-05-12" />
+        </insert>
+        <insert tableName="author">
+            <column name="firstName" value="Elisabeth" />
+            <column name="lastName" value="Robson" />
+            <column name="birthDate" value="1985-12-01" />
+        </insert>
+        <insert tableName="author">
+            <column name="firstName" value="Kathy" />
+            <column name="lastName" value="Sierra" />
+            <column name="birthDate" value="1978-07-10" />
+        </insert>
+        <insert tableName="author">
+            <column name="firstName" value="Bert" />
+            <column name="lastName" value="Bates" />
+            <column name="birthDate" value="1973-02-02" />
+        </insert>
+    </changeSet>
+    <changeSet id="4" author="oleg">
+        <insert tableName="reward">
+            <column name="year" value="2005" />
+            <column name="title" value="The Best Book" />
+        </insert>
+        <insert tableName="reward">
+            <column name="year" value="2006" />
+            <column name="title" value="The Best Book" />
+        </insert>
+        <insert tableName="reward">
+            <column name="year" value="2007" />
+            <column name="title" value="The Best Book" />
+        </insert>
+        <insert tableName="reward">
+            <column name="year" value="2008" />
+            <column name="title" value="The Best Book" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

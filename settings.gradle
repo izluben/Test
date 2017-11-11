@@ -1,0 +1,12 @@
+rootProject.name = 'city-claims-parent'
+include ':city-claims-domain'
+include ':city-claims-dao'
+include ':city-claims-db'
+include ':city-claims-ui'
+include ':spring-boot-config'
+
+project(':city-claims-domain').projectDir = "$rootDir/city-claims-domain" as File
+project(':city-claims-dao').projectDir = "$rootDir/city-claims-dao" as File
+project(':city-claims-db').projectDir = "$rootDir/city-claims-db" as File
+project(':city-claims-ui').projectDir = "$rootDir/city-claims-ui" as File
+project(':spring-boot-config').projectDir = "$rootDir/spring-boot-config" as File

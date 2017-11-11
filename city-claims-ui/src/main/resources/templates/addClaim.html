@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/template">
+<head>
+    <meta charset="UTF-8" />
+    <title>Odessa claims application</title>
+</head>
+<body>
+
+   <!-- Content -->
+   <div class="container" layout:fragment="content">
+       <!-- Heading -->
+       <div class="row">
+           <div class="col-lg-12">
+               <h1 class="page-header">Odessa Claims
+                   <small>resolve your dreams</small>
+               </h1>
+               <p>
+                  Опишите подробно вашу проблему и мы постараемся приложить максимум усилий для её разрешения
+               </p>
+           </div>
+
+           <form action="#" method="post" th:action="@{/new_claim}" th:object="${claim}">
+              <p>
+                  Заголовок:<br /> <input type="text" name="title" id="title" th:value="*{title}" size="53" />
+              </p>
+               <p>
+                   <textarea name="description" id="description" placeholder="Описание" cols="50" rows="10" th:text="*{description}"></textarea>
+               </p>
+               <input type="hidden" name="id" id="id" th:value="*{id}" />
+               <input type="submit" th:value="*{id==null ? 'Добавить':'Редактировать'}" />
+           </form>
+       </div>
+       <!-- /.row -->
+   </div>
+</body>
+</html>
