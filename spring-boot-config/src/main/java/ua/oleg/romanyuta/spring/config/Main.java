@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,6 +24,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ua.oleg.romanyuta.dao.AccountRepository;
 import ua.oleg.romanyuta.domain.Account;
+import ua.oleg.romanyuta.domain.Role;
 
 
 @SpringBootApplication(scanBasePackages = {"ua.oleg.romanyuta.ui"})
@@ -42,9 +44,25 @@ public class Main {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests().anyRequest().fullyAuthenticated().and().
-                    httpBasic().and().
-                    csrf().disable();
+//            http.authorizeRequests()
+////                    .antMatchers("**/add/*").hasRole(Role.ADMIN.name())
+////                    .antMatchers("/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
+//                    .anyRequest().authenticated();
+//            http.antMatcher("/**").authorizeRequests().antMatchers("/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
+//                    .and().csrf().disable();
+
+
+//            http.authorizeRequests().anyRequest().fullyAuthenticated()
+//                    .antMatchers(HttpMethod.POST, "/**").hasRole(Role.ADMIN.name())
+//                    .antMatchers("/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
+//                    .and().httpBasic()
+//                    .and().csrf().disable();
+
+            http
+                    .httpBasic().and()
+                    .authorizeRequests()
+                    .antMatchers(HttpMethod.POST, "/**").hasRole(Role.ADMIN.name())
+                    .and().csrf().disable();
         }
     }
 
