@@ -1,6 +1,8 @@
 package ua.oleg.romanyuta.domain;
 
 
+import com.fasterxml.jackson.annotation.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,9 @@ public class Book {
     @JoinTable(name = "authorsToBooks", joinColumns = {
             @JoinColumn(name = "book_id") },
             inverseJoinColumns = { @JoinColumn(name = "author_id") })
+//    @JsonManagedReference
+//    @JsonIgnore
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private List<Author> authors = new ArrayList();
 
     public Long getId() {
@@ -59,6 +64,7 @@ public class Book {
         this.genre = genre;
     }
 
+    @JsonIgnore
     public List<Author> getAuthors() {
         return authors;
     }

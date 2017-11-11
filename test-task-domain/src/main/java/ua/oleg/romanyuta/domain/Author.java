@@ -1,6 +1,8 @@
 package ua.oleg.romanyuta.domain;
 
 
+import com.fasterxml.jackson.annotation.*;
+
 import javax.persistence.*;
 
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ public class Author {
     private Date birthDate;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
+//    @JsonBackReference
+//    @JsonIgnore
+//    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private List<Book> books = new ArrayList();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
@@ -73,6 +78,7 @@ public class Author {
         this.birthDate = birthDate;
     }
 
+    @JsonIgnore
     public List<Book> getBooks() {
         return books;
     }
