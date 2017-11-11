@@ -1,5 +1,6 @@
 package ua.oleg.romanyuta.ui.controller;
 
+import ua.oleg.romanyuta.dao.AuthorRepository;
 import ua.oleg.romanyuta.dao.ClaimRepository;
 import ua.oleg.romanyuta.domain.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class IndexController {
 
     @Autowired
     private ClaimRepository claimRepository;
+
+    @Autowired
+    private AuthorRepository authorRepository;
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
